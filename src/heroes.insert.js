@@ -37,7 +37,7 @@ class Handler {
   async main(event) {
     try {
       const data = JSON.parse(event.body);
-      const dbParams = prepareData(data);
+      const dbParams = this.prepareData(data);
       await this.insertItem(dbParams);
       return this.handlerSuccess(dbParams.Item);
     } catch (error) {

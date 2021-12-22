@@ -5,14 +5,19 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "invoke-local": "sls invoke local -f hero-insert --logger",
+    "invoke-local": "sls invoke local -f hero-insert --logger --path request-mock/hero.insert.json",
     "invoke-prod": "sls invoke -f hero-insert --log",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "yml-lint": "cfn-lint validate serverless.yml --verbose"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.998.0"
+  },
+  "devDependencies": {
+    "cfn-lint": "^1.9.7",
+    "serverless": "^2.69.1"
   }
 }
