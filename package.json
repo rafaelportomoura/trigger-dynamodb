@@ -1,0 +1,18 @@
+{
+  "name": "trigger-dynamodb",
+  "version": "1.0.0",
+  "description": "<!-- title: 'AWS Node Scheduled Cron example in NodeJS' description: 'This is an example of creating a function that runs as a cron job using the serverless ''schedule'' event.' layout: Doc framework: v1 platform: AWS language: nodeJS priority: 1 authorLink: 'https://github.com/0dj0bz' authorName: 'Rob Abbott' authorAvatar: 'https://avatars3.githubusercontent.com/u/5679763?v=4&s=140' -->",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "invoke-local": "sls invoke local -f hero-insert --logger",
+    "invoke-prod": "sls invoke -f hero-insert --log",
+    "deploy": "sls deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.998.0"
+  }
+}
