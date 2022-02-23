@@ -21,7 +21,7 @@ authorName: 'Rafael Moura'
 Para implantar o exemplo, você precisa executar o seguinte comando:
 
 ```bash
-serverless deploy
+yarn deploy
 ```
 
 Depois de executar a implantação, você deve ver a saída semelhante a:
@@ -55,10 +55,12 @@ layers:
 
 ### Invocation
 
+Para alterar os parâmetros que serão enviados, use o arquivo `requests-mocks/hero.insert.json`
+
 Após a implantação bem-sucedida, você pode invocar a função implantada usando o seguinte comando:
 
 ```bash
-serverless invoke --function hero-insert
+yarn invoke
 ```
 
 Que deve resultar em resposta semelhante ao seguinte:
@@ -75,7 +77,7 @@ Que deve resultar em resposta semelhante ao seguinte:
 Você pode invocar sua função localmente usando o seguinte comando:
 
 ```bash
-serverless invoke local -f hero-insert
+yarn invoke-local
 ```
 
 Que deve resultar em resposta semelhante ao seguinte:
