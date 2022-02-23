@@ -1,7 +1,7 @@
 const uuid = require('uuid');
 const Joi = require('@hapi/joi');
 const decoratorValidator = require('./utils/decoratorValidator');
-const globalEnumParams = require('./utils/globalEnumParams');
+const GLOBAL_ENUM_PARAMS = require('./utils/globalsEnum');
 class Handler {
   constructor({ dynamoDbSvc }) {
     this.dynamoDbSvc = dynamoDbSvc;
@@ -47,9 +47,9 @@ class Handler {
 
   async main(event) {
     try {
-      const data = JSON.parse(event);
+      const data = event.body;
 
-      const dbParams = this.prepareData(value);
+      const dbParams = this.prepareData(data);
       await this.insertItem(dbParams);
       return this.handlerSuccess(dbParams.Item);
     } catch (error) {
@@ -70,6 +70,6 @@ const handler = new Handler({
 });
 module.exports = decoratorValidator(
   handler.main.bind(handler),
-  Handler.validator,
-  'globalEnumParams'
+  Handler.validator(),
+  GLOBAL_ENUM_PARAMS.ARG_TYPE.BODY
 );
