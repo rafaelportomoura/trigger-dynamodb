@@ -1,6 +1,10 @@
 # package directories
 node_modules
 jspm_packages
+package-lock.json
 
 # Serverless directories
 .serverless
+serverless_sdk/
+s_cronHandler.js
+s_Hero_insert.js

@@ -1,6 +1,6 @@
 <!--
-title: 'Image Analysis'
-description: 'Uma aplicação para reconhecimento de imagens'
+title: 'Trigger DynamoDB'
+description: 'Uma aplicação de inserção no DynamoDB e uso de cron-jobs'
 layout: Doc
 framework: v2
 platform: AWS

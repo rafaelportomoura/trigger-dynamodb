@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: Swagger Hero-Insert
+  description: "AWS serverless módulo 4."
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: https://c5grgtv9lf.execute-api.us-east-1.amazonaws.com/dev/
+    description: dev
+  - url: https://c5grgtv9lf.execute-api.us-east-1.amazonaws.com/prod/
+    description: prod
+tags:
+  - name: Hero
+    description: Everything about hero
+paths:
+  /heroes:
+    post:
+      tags:
+        - Hero
+      summary: Create Hero
+      operationId: createHero
+      requestBody:
+        description: Hero object that needs to be added to database
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewHero"
+        required: true
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Hero"
+        400:
+          description: BAD REQUEST
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      x-codegen-request-body-name: body
+
+components:
+  schemas:
+    NewHero:
+      required:
+        - nome
+        - poder
+      type: object
+      properties:
+        nome:
+          type: string
+        poder:
+          type: string
+    Hero:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        created_at:
+          type: string
+          format: date-time
+        nome:
+          type: string
+        poder:
+          type: string

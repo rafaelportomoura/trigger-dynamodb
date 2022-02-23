@@ -2,21 +2,23 @@ org: rafaelportomoura
 app: trigger-dynamodb
 service: trigger-dynamodb
 
-frameworkVersion: "2"
+frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
+  runtime: nodejs14.x
+  region: ${opt:region, 'us-east-1'}
   environment:
     DYNAMODB_TABLE: Heroes
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - dynamodb:GetItem
-        - dynamodb:UpdateItem
-        - dynamodb:PutItem
-      Resource: "arn:aws:dynamodb:${self:provider.region}:*table/${self:provider.environment.DYNAMO_TABLE}"
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:UpdateItem
+            - dynamodb:PutItem
+          Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 resources:
   Resources:
