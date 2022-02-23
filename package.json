@@ -8,6 +8,7 @@
     "invoke-local": "sls invoke local -f hero-insert  --path requests-mock/hero.insert.json",
     "invoke": "sls invoke -f hero-insert --path requests-mock/hero.insert.json",
     "deploy": "sls deploy --verbose",
+    "log-trigger": "sls logs -f hero-trigger -t",
     "doctor": "sls doctor",
     "yml-lint": "cfn-lint validate serverless.yml --verbose"
   },
@@ -16,7 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "aws-sdk": "^2.998.0"
+    "aws-sdk": "^2.998.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "cfn-lint": "^1.9.7",
