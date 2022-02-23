@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventID": "5d1071560f1d9f255283cab8f863c9b8",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1645635358,
+        "Keys": {
+          "nome": {
+            "S": "Hulk"
+          },
+          "id": {
+            "S": "79318ab0-94c9-11ec-abe2-ab834e43bee7"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "S": "2022-02-23T16:55:58.428Z"
+          },
+          "nome": {
+            "S": "Hulk"
+          },
+          "id": {
+            "S": "79318ab0-94c9-11ec-abe2-ab834e43bee7"
+          },
+          "poder": {
+            "S": "forte"
+          }
+        },
+        "SequenceNumber": "2305600000000062777162125",
+        "SizeBytes": 135,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:957909817873:table/Heroes/stream/2022-02-23T16:30:47.411"
+    }
+  ]
+}

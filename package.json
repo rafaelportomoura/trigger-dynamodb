@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "invoke-local": "sls invoke local -f hero-insert  --path requests-mock/hero.insert.json",
     "invoke": "sls invoke -f hero-insert --path requests-mock/hero.insert.json",
+    "invoke-local-trigger": "sls invoke local -f hero-trigger --path requests-mock/heroes-trigger.json",
+    "invoke-trigger": "sls invoke -f hero-trigger --path requests-mock/heroes-trigger.json",
     "deploy": "sls deploy --verbose",
-    "log-trigger": "sls logs -f hero-trigger -t",
+    "log-trigger": "sls logs -f hero-trigger",
     "doctor": "sls doctor",
     "yml-lint": "cfn-lint validate serverless.yml --verbose"
   },
